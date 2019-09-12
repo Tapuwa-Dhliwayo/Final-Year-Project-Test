@@ -38,7 +38,7 @@ bool funcX(CMOOSMsg & M, void * TheParameterYouSaidtoPassOnToCallback)
 
 bool funcY(CMOOSMsg & M, void * TheParameterYouSaidtoPassOnToCallback)
 {
-	gPrinter.SimplyPrintTimeAndMessage("call back for Y", MOOS::ThreadPrint::MAGENTA);
+	gPrinter.SimplyPrintTimeAndMessage(M.GetString(), MOOS::ThreadPrint::MAGENTA);
 	return true;
 }
 
@@ -54,7 +54,7 @@ int main(int argc, char * argv[]){
 	int db_port=9000;
 	P.GetVariable("--moos_port",db_port);
 
-	std::string my_name ="ex40";
+	std::string my_name ="ReceiveApp";
 	P.GetVariable("--moos_name",my_name);
 
 	//configure the comms
@@ -75,10 +75,7 @@ int main(int argc, char * argv[]){
 	//for ever loop sending data
 	std::vector<unsigned char> X(1000);
 	for(;;){
-		MOOSPause(10);
-		Comms.Notify("X",X); //for callback_X
-		Comms.Notify("Y","This is Y"); //for callback_Y
-		Comms.Notify("Z",7.0); //no callback
+		
 	}
 	return 0;
 }
