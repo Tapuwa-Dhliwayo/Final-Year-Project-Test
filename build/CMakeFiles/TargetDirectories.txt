@@ -1,0 +1,8 @@
+/home/administrator/moos-ivp/mymoos/build/CMakeFiles/edit_cache.dir
+/home/administrator/moos-ivp/mymoos/build/CMakeFiles/rebuild_cache.dir
+/home/administrator/moos-ivp/mymoos/build/PostApplication/CMakeFiles/edit_cache.dir
+/home/administrator/moos-ivp/mymoos/build/PostApplication/CMakeFiles/rebuild_cache.dir
+/home/administrator/moos-ivp/mymoos/build/PostApplication/CMakeFiles/PostApp.dir
+/home/administrator/moos-ivp/mymoos/build/ReceiveApplication/CMakeFiles/edit_cache.dir
+/home/administrator/moos-ivp/mymoos/build/ReceiveApplication/CMakeFiles/rebuild_cache.dir
+/home/administrator/moos-ivp/mymoos/build/ReceiveApplication/CMakeFiles/RecApp.dir
