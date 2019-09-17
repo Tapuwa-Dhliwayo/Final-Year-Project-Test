@@ -11,4 +11,4 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 
 add_subdirectory(PostApplication)
 add_subdirectory(ReceiveApplication)
-
+add_subdirectory(ArduinoTest)

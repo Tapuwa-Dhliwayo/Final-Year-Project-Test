@@ -5,12 +5,14 @@
 #include "MOOS/libMOOS/Utils/CommandLineParser.h"
 #include "MOOS/libMOOS/Utils/ConsoleColours.h"
 #include "MOOS/libMOOS/Utils/ThreadPrint.h"
+#include <iostream>
+
 
 MOOS::ThreadPrint gPrinter(std::cout);
 
 bool OnConnect(void * pParam){
 	CMOOSCommClient* pC =  reinterpret_cast<CMOOSCommClient*> (pParam);
-	pC->Register("X",0.0);
+	pC->Register("Rows",0.0);
 	pC->Register("Y",0.0);
 	pC->Register("Z",0.0);
 
@@ -32,7 +34,16 @@ bool OnMail(void *pParam){
 
 bool funcX(CMOOSMsg & M, void * TheParameterYouSaidtoPassOnToCallback)
 {
-	gPrinter.SimplyPrintTimeAndMessage("call back for X", MOOS::ThreadPrint::CYAN);
+
+	gPrinter.SimplyPrintTimeAndMessage("call back for Rows", MOOS::ThreadPrint::CYAN);
+	int rows = (int)M.GetDouble();
+	for(int i = 1; i <= rows; ++i){
+        	for(int j = 1; j <= i; ++j){
+            		std::cout << "* ";
+       	 	}
+        	std::cout << "\n";
+    	}	
+
 	return true;
 }
 
@@ -66,7 +77,7 @@ int main(int argc, char * argv[]){
 	//first parameter is the channel nick-name, then the function
 	//to call, then a parameter we want passed when callback is
 	//invoked
-	Comms.AddMessageCallBack("callback_X","X",funcX,NULL);
+	Comms.AddMessageCallBack("callback_X","Rows",funcX,NULL);
 	Comms.AddMessageCallBack("callback_Y","Y",funcY,NULL);
 
 	//start the comms running

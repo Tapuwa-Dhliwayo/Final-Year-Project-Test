@@ -136,6 +136,19 @@ RecApp/fast:
 	$(MAKE) -f ReceiveApplication/CMakeFiles/RecApp.dir/build.make ReceiveApplication/CMakeFiles/RecApp.dir/build
 .PHONY : RecApp/fast
 
+#=============================================================================
+# Target rules for targets named ard_test
+
+# Build rule for target.
+ard_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ard_test
+.PHONY : ard_test
+
+# fast build rule for target.
+ard_test/fast:
+	$(MAKE) -f ArduinoTest/CMakeFiles/ard_test.dir/build.make ArduinoTest/CMakeFiles/ard_test.dir/build
+.PHONY : ard_test/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -146,6 +159,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... PostApp"
 	@echo "... RecApp"
+	@echo "... ard_test"
 .PHONY : help
 
 

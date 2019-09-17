@@ -6,11 +6,13 @@
 #include "MOOS/libMOOS/Utils/ConsoleColours.h"
 #include "MOOS/libMOOS/Utils/ThreadPrint.h"
 
+#include <iostream>
+
 MOOS::ThreadPrint gPrinter(std::cout);
 
 bool OnConnect(void * pParam){
 	CMOOSCommClient* pC =  reinterpret_cast<CMOOSCommClient*> (pParam);
-	pC->Register("X",0.0);
+	pC->Register("Rows",0.0);
 	pC->Register("Y",0.0);
 	pC->Register("Z",0.0);
 
@@ -40,11 +42,17 @@ int main(int argc, char * argv[]){
 
 	//for ever loop sending data
 	std::vector<unsigned char> X(1000);
+
+	int rows = 5;
+
+
+
+
 	for(;;){
-		MOOSPause(10);
-		Comms.Notify("X",X); //for callback_X
-		Comms.Notify("Y","This is Y"); //for callback_Y
-		Comms.Notify("Z",7.0); //no callback
+		MOOSPause(10000);
+		Comms.Notify("Rows",rows); //for callback_X
+		//Comms.Notify("Y","This is Y"); //for callback_Y
+		//Comms.Notify("Z",7.0); //no callback
 	}
 	return 0;
 }

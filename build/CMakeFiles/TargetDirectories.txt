@@ -6,3 +6,6 @@
 /home/administrator/moos-ivp/mymoos/build/ReceiveApplication/CMakeFiles/edit_cache.dir
 /home/administrator/moos-ivp/mymoos/build/ReceiveApplication/CMakeFiles/rebuild_cache.dir
 /home/administrator/moos-ivp/mymoos/build/ReceiveApplication/CMakeFiles/RecApp.dir
+/home/administrator/moos-ivp/mymoos/build/ArduinoTest/CMakeFiles/edit_cache.dir
+/home/administrator/moos-ivp/mymoos/build/ArduinoTest/CMakeFiles/rebuild_cache.dir
+/home/administrator/moos-ivp/mymoos/build/ArduinoTest/CMakeFiles/ard_test.dir
